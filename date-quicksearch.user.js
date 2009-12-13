@@ -41,7 +41,7 @@ function createDateWidget() {
     
     for(var i = 0; i < dateWidget.length; i++) {
         var searchStr = document.location.href;
-        searchStr.replace(/#.*/, "");
+        searchStr = searchStr.replace(/#.*/, "");
         searchStr += '#search/';
         searchStr += buildSearchStr(dateWidget[i].after, dateWidget[i].before);      
         
