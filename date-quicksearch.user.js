@@ -40,7 +40,9 @@ function createDateWidget() {
     widget += '<table cellpadding="0" class="cf nX"><tbody>';
     
     for(var i = 0; i < dateWidget.length; i++) {
-        var searchStr = 'https://mail.google.com/mail/?ui=2&shva=1#search/';
+        var searchStr = document.location.href;
+        searchStr.replace(/#.*/, "");
+        searchStr += '#search/';
         searchStr += buildSearchStr(dateWidget[i].after, dateWidget[i].before);      
         
         widget += '<tr class="Alfa2e" id=":s4"><td class="nL"></td><td><div class="n2"><div class="nU"><a href="' + searchStr + '" target="_top" title="' + dateWidget[i].label + '" class="n0">' + dateWidget[i].label + '</a></div></div></td></tr>';
