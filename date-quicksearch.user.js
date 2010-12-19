@@ -52,7 +52,6 @@ var dateWidget  = [
 })();
 
 function createDateWidget() {
-    alert('Hello');
     var canvasFrame = $("#canvas_frame").contents();
     var widget = '<div class="CM"></div><div class="nM"><div class="n3"><div class="LrBjie">';
     widget += '<div class="TK">';
@@ -67,7 +66,6 @@ function createDateWidget() {
     }
     
     widget += '</div></div></div></div>';
-    alert(widget);
     $(".oo", canvasFrame).append(widget);
 }
 
