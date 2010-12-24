@@ -2,7 +2,7 @@
 // @name          Date Based Quick Search          
 // @description   Adds a sidebar widget to GMail to allow quick date-based searches
 // @author        Arvind Satyanarayan
-// @version       1.05
+// @version       1.06
 // @license       GPLv3
 // @include       http://mail.google.com/*
 // @include       https://mail.google.com/*
@@ -69,6 +69,12 @@ function createDateWidget() {
     }
     
     widget += '</div></div><div class="CM"></div>';
+    widget += '<script type="text/javascript">';
+    widget += "     window.onhashchange = function() {";
+    widget += "         var divs = document.getElementById('canvas_frame').contentDocument.getElementById('date-quicksearch').getElementsByClassName('TO');"
+    widget += "for(var i = 0; i < divs.length; i++) { if(!window.location.hash.match('search')) divs[i].className = 'TO'; }"
+    widget += "};"
+    
     $(":jd > .zw", canvasFrame).before(widget);
 }
 
