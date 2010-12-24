@@ -2,7 +2,7 @@
 // @name          Date Based Quick Search          
 // @description   Adds a sidebar widget to GMail to allow quick date-based searches
 // @author        Arvind Satyanarayan
-// @version       1.03
+// @version       1.04
 // @license       GPLv3
 // @include       http://mail.google.com/*
 // @include       https://mail.google.com/*
@@ -53,7 +53,7 @@ var dateWidget  = [
 
 function createDateWidget() {
     var canvasFrame = $("#canvas_frame").contents();
-    var widget = '<div class="CM"></div><div class="nM"><div class="n3"><div class="LrBjie">';
+    var widget = '<div class="n3"><div class="LrBjie">';
     widget += '<div class="TK">';
     
     for(var i = 0; i < dateWidget.length; i++) {
@@ -65,8 +65,8 @@ function createDateWidget() {
         widget += '<div class="TO"><div class="TN"><div class="nL J-J5-Ji"></div><span class="nU"><a href="' + searchStr + '" target="_top" title="' + dateWidget[i].label + '" class="n0">' + dateWidget[i].label + '</a></span></div></div>';
     }
     
-    widget += '</div></div></div></div>';
-    $(".oo", canvasFrame).append(widget);
+    widget += '</div></div></div><div class="CM"></div>';
+    $(":jd > .zw", canvasFrame).before(widget);
 }
 
 function buildSearchStr(after, before) {
